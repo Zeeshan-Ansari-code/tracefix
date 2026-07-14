@@ -1,0 +1,12 @@
+node_modules
+.next
+.tracefix-sandboxes
+.tracefix-data
+.env
+.env.local
+.env.*.local
+apps/web/.env.local
+dist
+*.log
+.DS_Store
+package-lock.yaml

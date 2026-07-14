@@ -1,0 +1,143 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1.4rem 1.1rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.85rem;
+  background:
+    linear-gradient(180deg, #101820 0%, #0c1218 100%);
+  color: #e8eef4;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: #f4f8fb;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 750;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.mark {
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 0 3px rgba(61, 214, 140, 0.16);
+}
+
+.tag {
+  margin: 0;
+  color: #8b9aab;
+  font-size: 0.78rem;
+  padding-left: 1.5rem;
+}
+
+.nav {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  margin-top: 0.75rem;
+}
+
+.navLink,
+.navActive {
+  text-decoration: none;
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #c5d0db;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.navActive {
+  background: rgba(61, 214, 140, 0.14);
+  color: #9ef0c4;
+}
+
+.userBox {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.userBox strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.userBox span {
+  display: block;
+  color: #8b9aab;
+  font-size: 0.75rem;
+  margin-top: 0.15rem;
+  word-break: break-all;
+}
+
+.userBox button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #d5dee8;
+  border-radius: 10px;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.userBox button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.main {
+  min-width: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(31, 157, 99, 0.1), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 0% 0%, rgba(29, 78, 137, 0.08), transparent 45%),
+    linear-gradient(180deg, #f4f7fb 0%, #e8eef5 100%);
+}
+
+.mainInner {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 1.75rem 0 3rem;
+}
+
+.public {
+  min-height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    grid-template-rows: auto;
+  }
+
+  .nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

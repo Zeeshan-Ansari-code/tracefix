@@ -1,0 +1,13 @@
+{
+  "name": "tracefix",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Standalone AI debugging agent — crash → root cause → fix branch → verified.",
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter @tracefix/api --filter @tracefix/web dev",
+    "dev:api": "pnpm --filter @tracefix/api dev",
+    "dev:web": "pnpm --filter @tracefix/web dev",
+    "install:browsers": "pnpm --filter @tracefix/agent exec playwright install chromium"
+  }
+}

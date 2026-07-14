@@ -1,0 +1,57 @@
+.wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.svg {
+  display: block;
+}
+
+.centerValue {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 750;
+  fill: #0f1728;
+}
+
+.centerLabel {
+  font-size: 0.68rem;
+  fill: #6b7c90;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.legend {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.legend li {
+  display: grid;
+  grid-template-columns: 0.65rem 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.84rem;
+  color: #5b6b82;
+}
+
+.legend span {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+}
+
+.legend strong {
+  color: #0f1728;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}

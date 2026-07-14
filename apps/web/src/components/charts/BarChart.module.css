@@ -1,0 +1,29 @@
+.wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  min-width: 260px;
+  height: auto;
+}
+
+.bar {
+  fill: #1f9d63;
+  opacity: 0.9;
+}
+
+.label {
+  fill: #6b7c90;
+  font-size: 0.68rem;
+  font-family: var(--font-mono), monospace;
+}
+
+.value {
+  fill: #0f1728;
+  font-size: 0.72rem;
+  font-weight: 650;
+  font-family: var(--font-mono), monospace;
+}

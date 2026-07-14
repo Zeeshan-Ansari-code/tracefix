@@ -1,0 +1,45 @@
+:root {
+  --ink: #0f1728;
+  --muted: #5b6b82;
+  --line: rgba(15, 23, 40, 0.1);
+  --panel: #ffffff;
+  --accent: #1f9d63;
+  --accent-ink: #0f5c38;
+  --accent-soft: rgba(31, 157, 99, 0.12);
+  --ok: #15803d;
+  --warn: #b45309;
+  --danger: #b42318;
+  --shadow: 0 14px 34px rgba(15, 23, 40, 0.07);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--ink);
+  background: #e8eef5;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent-soft);
+}

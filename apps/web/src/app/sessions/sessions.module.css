@@ -1,0 +1,145 @@
+.page {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.header h1 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: -0.04em;
+  margin-top: 0.2rem;
+}
+
+.cta {
+  text-decoration: none;
+  background: var(--accent);
+  color: #f4fff8;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.grid li {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.top span {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+.top span[data-status='failed'] {
+  background: rgba(180, 35, 24, 0.1);
+  color: var(--danger);
+}
+
+.top span[data-status='completed'] {
+  background: rgba(21, 128, 61, 0.12);
+  color: var(--ok);
+}
+
+.top time {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.desc {
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.path,
+.meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-family: var(--font-mono), monospace;
+  word-break: break-all;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.grid a {
+  color: var(--accent-ink);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.rowActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.deleteBtn {
+  border: 1px solid rgba(180, 35, 24, 0.35);
+  background: rgba(180, 35, 24, 0.06);
+  color: var(--danger);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.deleteBtn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+}
