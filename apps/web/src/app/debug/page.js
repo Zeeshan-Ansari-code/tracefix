@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { api } from '../../lib/api.js';
+import { api, apiBase } from '../../lib/api.js';
 import { useAuth } from '../../components/auth/AuthProvider.jsx';
 import styles from './debug.module.css';
 
@@ -17,8 +17,6 @@ const STEPS = [
   'Run tests',
   'Confirm resolved',
 ];
-
-const API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4100';
 
 export default function DebugPage() {
   const router = useRouter();
@@ -166,7 +164,7 @@ export default function DebugPage() {
               Disconnect
             </button>
           ) : (
-            <a className={styles.githubBtn} href={`${API}/auth/github`}>
+            <a className={styles.githubBtn} href={`${apiBase()}/auth/github`}>
               Connect GitHub
             </a>
           )}
