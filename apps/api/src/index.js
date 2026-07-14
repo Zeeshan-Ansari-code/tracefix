@@ -33,6 +33,11 @@ const WEB_ORIGIN = process.env.WEB_ORIGIN || 'http://localhost:3100';
 const SESSION_SECRET = process.env.SESSION_SECRET || 'tracefix-dev-secret-change-me';
 const ROOT = resolve(__dirname, '../../..');
 const SANDBOX_DIR = process.env.SANDBOX_DIR || '.tracefix-sandboxes';
+// Vercel (web) + separate API host = cross-site cookies → SameSite=None; Secure
+const crossSiteCookies =
+  WEB_ORIGIN.startsWith('https://') &&
+  String(process.env.API_URL || '').startsWith('https://') &&
+  !WEB_ORIGIN.includes('localhost');
 
 const signupSchema = z.object({
   name: z.string().trim().min(2).max(80),
@@ -101,7 +106,8 @@ app.use(
     name: 'tracefix_session',
     keys: [SESSION_SECRET],
     maxAge: 7 * 24 * 60 * 60 * 1000,
-    sameSite: 'lax',
+    sameSite: crossSiteCookies ? 'none' : 'lax',
+    secure: crossSiteCookies,
     httpOnly: true,
   }),
 );
