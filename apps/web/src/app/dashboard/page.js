@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { api } from '../../lib/api.js';
 import { BarChart } from '../../components/charts/BarChart.jsx';
 import { DonutChart } from '../../components/charts/DonutChart.jsx';
+import { TraceFixLoader } from '../../components/ui/TraceFixLoader.jsx';
 import styles from './dashboard.module.css';
 
 export default function DashboardPage() {
@@ -42,7 +43,7 @@ export default function DashboardPage() {
   }, [data]);
 
   if (error) return <p className={styles.error}>{error}</p>;
-  if (!data) return <p className={styles.muted}>Loading agent analytics…</p>;
+  if (!data) return <TraceFixLoader label="Loading analytics" size={48} />;
 
   const t = data.totals;
 

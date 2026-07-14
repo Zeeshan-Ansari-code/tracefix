@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from './AuthProvider.jsx';
+import { TraceFixLoader } from '../ui/TraceFixLoader.jsx';
 
 const PUBLIC = ['/login', '/signup'];
 
@@ -19,11 +20,7 @@ export function AuthGate({ children }) {
   }, [user, loading, isPublic, router]);
 
   if (loading) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', color: '#6b7c90' }}>
-        Loading TraceFix…
-      </div>
-    );
+    return <TraceFixLoader fullScreen label="Loading TraceFix" size={64} />;
   }
 
   if (!user && !isPublic) return null;

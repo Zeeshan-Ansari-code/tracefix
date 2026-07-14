@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { api } from '../../../lib/api.js';
 import { ConfirmModal } from '../../../components/ui/ConfirmModal.jsx';
+import { TraceFixLoader } from '../../../components/ui/TraceFixLoader.jsx';
 import styles from './page.module.css';
 
 const ORDER = [
@@ -114,7 +115,7 @@ export default function SessionDetailPage() {
     );
   }
 
-  if (!session) return <p className={styles.muted}>Loading session…</p>;
+  if (!session) return <TraceFixLoader label="Loading session" size={48} />;
 
   const diagnosis = session.result?.diagnosis;
   const verify = session.result?.verify;
